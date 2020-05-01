@@ -1,0 +1,10 @@
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\bin\Debug\CashWork_Aplication.exe.config
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\bin\Debug\CashWork_Aplication.exe
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\bin\Debug\CashWork_Aplication.pdb
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.csprojAssemblyReference.cache
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.Form1.resources
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.Properties.Resources.resources
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.csproj.GenerateResource.cache
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.csproj.CoreCompileInputs.cache
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.exe
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\КЭШ_Работа_Приложение\CashWork_Aplication\obj\Debug\CashWork_Aplication.pdb

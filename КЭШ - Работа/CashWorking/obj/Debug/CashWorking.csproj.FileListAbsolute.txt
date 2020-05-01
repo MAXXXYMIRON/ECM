@@ -1,0 +1,7 @@
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\bin\Debug\CashWorking.exe.config
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\bin\Debug\CashWorking.exe
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\bin\Debug\CashWorking.pdb
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\obj\Debug\CashWorking.csprojAssemblyReference.cache
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\obj\Debug\CashWorking.csproj.CoreCompileInputs.cache
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\obj\Debug\CashWorking.exe
+C:\Users\MAXXXYMIRON\Desktop\.ПАРЫ\ЭВМ\ПРАКТИКА\КЭШ - Работа\CashWorking\obj\Debug\CashWorking.pdb

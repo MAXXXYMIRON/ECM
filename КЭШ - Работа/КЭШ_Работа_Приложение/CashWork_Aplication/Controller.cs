@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CashWorking
+﻿namespace CashWorking
 {
     class Controller
     {
-        static MainMemory MainMemo;
-        static Cash L;
+        public static MainMemory MainMemo;
+        public static Cash L;
+        public bool FromCash;
+
         int CountLines;
 
         public Controller(int countSegments, int countLines, int countElements)
@@ -39,8 +35,11 @@ namespace CashWorking
         //Проверяет на совпадение требуемый и текущий теги строки
         void DirectMaping(int i, int j)
         {
+            FromCash = true;
             if (i != L.GetTag(j))
             {
+                FromCash = false;
+
                 if (L.GetTag(j) != -1)
                     MainMemo.SetLine(L.GetTag(j), j, L[j]);
                 
