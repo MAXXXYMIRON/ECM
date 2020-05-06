@@ -4,8 +4,10 @@ using System.IO;
 namespace CashWorking
 {
     class MainMemory
-    {
-        readonly FileStream RAM = new FileStream("Memory.ini", FileMode.Create);
+    {   
+        BinaryWriter Write;
+        BinaryReader Read;
+
         int CountSegments,
             CountLines,
             CountElements;
@@ -17,57 +19,81 @@ namespace CashWorking
             CountLines = countLines;
             CountElements = countElements;
 
-            //10 - блоков
-            for (int i = 0; i < CountSegments; i++)
+            using (Write = new BinaryWriter(new FileStream("Memory.ini", FileMode.Create)))
             {
-                RAM.WriteByte(10);
-
-                //10 - строк
-                for (int j = 0; j < CountLines; j++)
+                //CountSegments - блоков
+                for (int i = 0; i < CountSegments; i++)
                 {
-                    //4 - элемента
-                    for (int k = 0; k < CountElements; k++)
+                    Write.Write((char)10);
+
+                    //CountLines - строк
+                    for (int j = 0; j < CountLines; j++)
                     {
-                        RAM.WriteByte((byte)values.Next(48, 58));
+                        //CountElements - элементов
+                        for (int k = 0; k < CountElements; k++)
+                        {
+                            Write.Write(values.Next(1000, 9999));
+                            Write.Write(' ');
+                        }
+                        Write.Write((char)10);
                     }
-                    RAM.WriteByte(10);
-                }
+                } 
             }
         }
 
-        void Positioning(int segment, int line)
+        void Positioning(int segment, int line, IDisposable WriteRead)
         {
             segment--;
             line--;
 
+            int position = (segment + 1) + //Отступы м\у сегментами
+                (segment * (CountLines * ((CountElements * 4) + 5))) +  //Пропуск эл. до нужного сегмента
+                    (line * ((CountElements * 4) + 5)); //Пропуск эл. до нужной строки 
+
             //Позиция каретки с учетом размеров
-            RAM.Position = (segment + 1) + //Отступы м\у сегментами
-                (segment * (CountLines * (CountElements + 1))) +  //Пропуск эл. до нужного сегмента
-                (line * ((CountElements + 1))); //Пропуск эл. до нужной строки
+            switch (WriteRead)
+            {
+                case BinaryWriter writer:
+                    writer.BaseStream.Position = position;
+                    break;
+                case BinaryReader reader:
+                    reader.BaseStream.Position = position;
+                    break;
+            }
+
         }
 
         //Cчитать строку line в сегменте segment
-        public char[] GetLine(int segment, int line)
+        public int[] GetLine(int segment, int line)
         {
-            char[] temp = new char[CountElements];
-            Positioning(segment, line);
+            int[] temp = new int[CountElements];
 
-            for (int i = 0; i < CountElements; i++)
+            using (Read = new BinaryReader(new FileStream("Memory.ini", FileMode.Open)))
             {
-                temp[i] = (char)RAM.ReadByte();
+                Positioning(segment, line, Read);
+
+                for (int i = 0; i < CountElements; i++)
+                {
+                    temp[i] = Read.ReadInt32();
+                    Read.BaseStream.Position++;
+                } 
             }
 
             return temp;
         }
 
         //Записать строку temp в строку line в сегменте segment
-        public void SetLine(int segment, int line, char[] temp)
+        public void SetLine(int segment, int line, int[] temp)
         {
-            Positioning(segment, line);
-
-            for (int i = 0; i < CountElements; i++)
+            using (Write = new BinaryWriter(new FileStream("Memory.ini", FileMode.Open)))
             {
-                RAM.WriteByte((byte)temp[i]);
+                Positioning(segment, line, Write);
+
+                for (int i = 0; i < CountElements; i++)
+                {
+                    Write.Write(temp[i]);
+                    Write.Write(' ');
+                } 
             }
         }
     }   

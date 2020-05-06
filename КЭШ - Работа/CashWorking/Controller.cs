@@ -16,7 +16,7 @@
         //i - сегмент
         //j - строка
         //k - смещение
-        public char this[int i, int j, int k]
+        public int this[int i, int j, int k]
         {
             get
             {

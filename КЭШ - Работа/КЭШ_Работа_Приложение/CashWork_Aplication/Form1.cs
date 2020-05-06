@@ -12,10 +12,10 @@ namespace CashWork_Aplication
         int CountSegments,
             CountLines,
             CountElements;
-        char[] LineData;
+        int[] LineData;
 
         int AdresI, AdresJ, AdresK;
-        char WriteVal;
+        int WriteVal;
 
         Stopwatch Time = new Stopwatch();
 
@@ -32,7 +32,7 @@ namespace CashWork_Aplication
                 CountLines = Convert.ToInt32(Lines.Text);
                 CountElements = Convert.ToInt32(Els.Text);
 
-                LineData = new char[CountElements];
+                LineData = new int[CountElements];
                 Data = new Controller(CountSegments, CountLines, CountElements);
 
                 Make.Enabled = false;
@@ -89,7 +89,7 @@ namespace CashWork_Aplication
                 AdresI = Convert.ToInt32(Segment.Text);
                 AdresJ = Convert.ToInt32(Line.Text);
                 AdresK = Convert.ToInt32(Element.Text);
-                WriteVal = Convert.ToChar(WriteValue.Text);
+                WriteVal = Convert.ToInt32(WriteValue.Text);
 
                 Time.Start();
                 Data[AdresI, AdresJ, AdresK] = WriteVal;
@@ -117,7 +117,7 @@ namespace CashWork_Aplication
                 C.Text += "\t\t";
                 for (int k = 0; k < CountElements; k++)
                 {
-                    C.Text += LineData[k];
+                    C.Text += LineData[k] + " ";
                 }
                 C.Text += '\n';
             }
@@ -132,14 +132,14 @@ namespace CashWork_Aplication
                     LineData = Controller.MainMemo.GetLine(i, j);
                     for (int k = 0; k < CountElements; k++)
                     {
-                        MM.Text += LineData[k];
+                        MM.Text += LineData[k] + " ";
                     }
                     MM.Text += '\n';
                 }
                 MM.Text += '\n';
             }
         }
-        void Upload_data(char el)
+        void Upload_data(int el)
         {
             if (Data.FromCash)
             {
@@ -161,7 +161,7 @@ namespace CashWork_Aplication
             labelLine.Text = "";
             for (int i = 1; i <= CountElements; i++)
             {
-                labelLine.Text += Controller.L[AdresJ, i];
+                labelLine.Text += Controller.L[AdresJ, i] + " ";
             }
         }
     }

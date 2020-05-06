@@ -4,9 +4,8 @@
     {
         public static MainMemory MainMemo;
         public static Cash L;
-        public bool FromCash;
-
         int CountLines;
+        public bool FromCash;
 
         public Controller(int countSegments, int countLines, int countElements)
         {
@@ -18,7 +17,7 @@
         //i - сегмент
         //j - строка
         //k - смещение
-        public char this[int i, int j, int k]
+        public int this[int i, int j, int k]
         {
             get
             {
@@ -36,6 +35,7 @@
         void DirectMaping(int i, int j)
         {
             FromCash = true;
+
             if (i != L.GetTag(j))
             {
                 FromCash = false;
